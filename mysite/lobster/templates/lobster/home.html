@@ -1,0 +1,31 @@
+{% extends 'lobster/header.html' %}
+
+{% block head %}
+    <title>Lobster project</title>
+{% endblock %}
+
+{% load static %}
+
+{% block stylesheets %}
+    <link href="{% static 'lobster/css/home.css' %}" rel="stylesheet" type = "text/css"/>
+{% endblock%}
+
+{% block body %}
+    <div class="page-header">Create or select project:</div>
+        <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <div class="project_menu">
+                <div class="project_row">
+                    <div class="project_cell_name">{{ form.project_name }}</div><div class="project_cell_date">Now</div><div class="project_cell_status">0%</div><div class="project_cell_add"><input type="submit" name="add_project" id="add_project" value="Add"></div>
+                </div>
+                {% for project in projects %}
+                    <div class="project_row">
+                        <a class="project_link" href="{% url 'nonradData' project.id %}"><div class="project_cell_name">{{ project.name }}</div><div class="project_cell_date">{{ project.create_date }}</div><div class="project_cell_status">{{ project.status }}</div></a><div class="project_cell_remove"><input type="submit" name="remove_project" id="remove_project" value="{{project.id}}" formnovalidate></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </form>
+
+<script src="{% static 'lobster/js/home.js' %}"></script>
+{% endblock %}
+

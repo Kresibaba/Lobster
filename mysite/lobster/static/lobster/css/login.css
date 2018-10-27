@@ -1,0 +1,106 @@
+html {
+    background: url("../img/Background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#table_login {
+    position: fixed;
+    left: 41%;
+    top:30%;
+    width: 18%;
+    line-height: 5%;
+    display: block;
+    empty-cells: hide;
+}
+
+#table_message {
+    position: fixed;
+    left: 35%;
+    top: 45%;
+    width: 30%;
+    display: block;
+}
+
+#id_username, #id_password {
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width:100%;
+    height: 25px;
+    color: black;
+    cursor: default;
+    font-size: 16px;
+    text-align: left;
+    -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+::placeholder{
+    font-size: 14px;
+    font-style: italic;
+    color: black;
+    opacity: 0.5;
+    text-align: left;
+}
+
+.td_login_img {
+    height: auto;
+    text-align: right;
+    width: 13%;
+    max-width: 100%;
+}
+
+.td_login_spc {
+    width: 3%;
+}
+
+.td_login_item {
+    height: auto;
+    width: 95%;
+}
+
+#login_but {
+    border: solid grey 1px;
+    border-radius: 4px;
+    text-decoration: none;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    background-color: rgba(1,1,1,0);
+    font: bold 16px Helvetica sans-serif;
+    color: grey;
+}
+
+#login_but_div {
+    text-align: center;
+}
+
+#id_username_img, #id_password_img {
+    display: block;
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+#tr_message {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#td_message {
+    display: block;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    color: red;
+    font: bold 16px Helvetica sans-serif;
+}

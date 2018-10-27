@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% block head %}
+	{% endblock %}
+
+	<meta charset="utf-8" />
+	{% load static %}
+    <link href="{% static 'lobster/css/header.css' %}" rel="stylesheet" type = "text/css"/>
+
+    {% block stylesheets %}
+    {% endblock%}
+
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0 shrink-to-fit=yes">
+
+	<style type="text/css">
+		body {
+		  height:100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page-env">
+		<div class="dropdown-menu">
+			<img class="dropdown-btn" onclick="dropdown_fnc()" src="{% static "lobster/img/hamburger.png" %}">
+			<div id="dropdown-links" class="dropdown-content">
+				<p>Hi {{ user.username }}</p>
+				<a href="logout/">Logout</a>
+			</div>
+		</div>
+	</div>
+    {% block body %}
+    {% endblock %}
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="{% static 'lobster/js/header.js' %}"></script>
+
+</body>
+
+</html>

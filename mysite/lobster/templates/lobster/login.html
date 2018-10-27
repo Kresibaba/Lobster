@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+	<title>Welcome to Lobster</title>
+	<meta charset="utf-8" />
+	{% load static %}
+	<link href="{% static 'lobster/css/login.css' %}" rel="stylesheet" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0 shrink-to-fit=yes">
+
+	<style type="text/css">
+		body {
+		  height:100%;
+		}
+	</style>
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <table id="table_login">
+            <tr class="tr_login">
+                <td class="td_login_img"><img id="id_username_img" src={% static "lobster/img/user_img.png" %} ></td>
+                <td class="td_login_spc"></td>
+                <td class="td_login_item">{{ form.username }}</td>
+            </tr>
+            <tr class="tr_login">
+                <td class="td_login_img"><img id="id_password_img" src={% static "lobster/img/lock_img.png" %} ></td>
+                <td class="td_login_spc"></td>
+                <td class="td_login_item">{{ form.password }}</td>
+            </tr>
+            <tr class="tr_login">
+                <td colspan="3"><div id="login_but_div"><input id="login_but" type="submit" value="Login" onmouseenter="login_btn_hover()" onmouseleave="login_btn_normal()"/></div></td>
+            </tr>
+        </table>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <table id="table_message">
+        <tr id="tr_message">
+            <td id="td_message">
+                {% if form.errors %}
+                    <p>Incorrect username or password. <br>Please try again.</p>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="{% static 'lobster/js/login.js' %}"></script>
+</body>
+
+</html>

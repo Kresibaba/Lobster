@@ -1,0 +1,88 @@
+{% extends 'lobster/header.html' %}
+
+{% block head %}
+    <title>Lobster project</title>
+{% endblock %}
+
+{% load static %}
+
+{% block stylesheets %}
+    <link href="{% static 'lobster/css/radData.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock%}
+
+{% block body %}
+
+<!--Periodic table-->
+<div class="table-envelop">
+    <form action="{% url 'radData' %}" method="post" id="radDataElement">
+        {% csrf_token %}
+        <table class="periodic-table">
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">H</div><div class="element-name">Hydrogen</div></td><td class="table-element-empty" colspan="16"></td><td class="table-element"><div class="element-abbr">He</div><div class="element-name">Helium</div></td></tr>
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">Li</div><div class="element-name">Lithium</div></td><td class="table-element"><div class="element-abbr">Be</div><div class="element-name">Beryllium</div></td><td class="table-element-empty" colspan="10"></td>
+            <td class="table-element"><div class="element-abbr">B</div><div class="element-name">Boron</div></td><td class="table-element"><div class="element-abbr">C</div><div class="element-name">Carbon</div></td><td class="table-element"><div class="element-abbr">N</div><div class="element-name">Nitrogen</div></td>
+            <td class="table-element"><div class="element-abbr">O</div><div class="element-name">Oxygen</div></td><td class="table-element"><div class="element-abbr">F</div><div class="element-name">Flourine</div></td><td class="table-element"><div class="element-abbr">Ne</div><div class="element-name">Neon</div></td></tr>
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">Na</div><div class="element-name">Sodium</div></td><td class="table-element"><div class="element-abbr">Mg</div><div class="element-name">Magnesium</div></td><td class="table-element-empty" colspan="10"></td><td class="table-element"><div class="element-abbr">Al</div><div class="element-name">Aluminium</div></td>
+            <td class="table-element"><div class="element-abbr">Si</div><div class="element-name">Silicon</div></td><td class="table-element"><div class="element-abbr">P</div><div class="element-name">Phosphorus</div></td><td class="table-element"><div class="element-abbr">S</div><div class="element-name">Sulphur</div></td>
+            <td class="table-element"><div class="element-abbr">Cl</div><div class="element-name">Chlorine</div></td><td class="table-element"><div class="element-abbr">Ar</div><div class="element-name">Argon</div></td></tr>
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">K</div><div class="element-name">Potassium</div></td><td class="table-element"><div class="element-abbr">Ca</div><div class="element-name">Calcium</div></td><td class="table-element"><div class="element-abbr">Sc</div><div class="element-name">Scandium</div></td><td class="table-element"><div class="element-abbr">Ti</div><div class="element-name">Titanium</div></td>
+            <td class="table-element"><div class="element-abbr">V</div><div class="element-name">Vanadium</div></td><td class="table-element"><div class="element-abbr">Cr</div><div class="element-name">Chromium</div></td><td class="table-element"><div class="element-abbr">Mn</div><div class="element-name">Manganese</div></td><td class="table-element"><div class="element-abbr">Fe</div><div class="element-name">Iron</div></td>
+            <td class="table-element"><div class="element-abbr">Co</div><div class="element-name">Cobalt</div></td><td class="table-element"><div class="element-abbr">Ni</div><div class="element-name">Nickle</div></td><td class="table-element"><div class="element-abbr">Cu</div><div class="element-name">Copper</div></td><td class="table-element"><div class="element-abbr">Zn</div><div class="element-name">Zinc</div></td>
+            <td class="table-element"><div class="element-abbr">Ga</div><div class="element-name">Gallium</div></td><td class="table-element"><div class="element-abbr">Ge</div><div class="element-name">Germanium</div></td><td class="table-element"><div class="element-abbr">As</div><div class="element-name">Arsenic</div></td>
+            <td class="table-element"><div class="element-abbr">Se</div><div class="element-name">Selenium</div></td><td class="table-element"><div class="element-abbr">Br</div><div class="element-name">Bromine</div></td><td class="table-element"><div class="element-abbr">Kr</div><div class="element-name">Krypton</div></td></tr>
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">Rb</div><div class="element-name">Rubidium</div></td><td class="table-element"><div class="element-abbr">Sr</div><div class="element-name">Strontium</div></td><td class="table-element"><div class="element-abbr">Y</div><div class="element-name">Yttrium</div></td><td class="table-element"><div class="element-abbr">Zr</div><div class="element-name">Zirconium</div></td>
+            <td class="table-element"><div class="element-abbr">Nb</div><div class="element-name">Niobium</div></td><td class="table-element"><div class="element-abbr">Mo</div><div class="element-name">Molybdenum</div></td><td class="table-element"><div class="element-abbr">Tc</div><div class="element-name">Technetium</div></td><td class="table-element"><div class="element-abbr">Ru</div><div class="element-name">Ruthenium</div></td>
+            <td class="table-element"><div class="element-abbr">Rh</div><div class="element-name">Rhodium</div></td><td class="table-element"><div class="element-abbr">Pd</div><div class="element-name">Palladium</div></td><td class="table-element"><div class="element-abbr">Ag</div><div class="element-name">Silver</div></td><td class="table-element"><div class="element-abbr">Cd</div><div class="element-name">Cadmium</div></td>
+            <td class="table-element"><div class="element-abbr">In</div><div class="element-name">Indium</div></td><td class="table-element"><div class="element-abbr">Sn</div><div class="element-name">Tin</div></td><td class="table-element"><div class="element-abbr">Sb</div><div class="element-name">Antimony</div></td><td class="table-element"><div class="element-abbr">Te</div><div class="element-name">Tellurium</div></td>
+            <td class="table-element"><div class="element-abbr">I</div><div class="element-name">Iodine</div></td><td class="table-element"><div class="element-abbr">Xe</div><div class="element-name">Xenon</div></td></tr>
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">Cs</div><div class="element-name">Cesium</div><td class="table-element"><div class="element-abbr">Ba</div><div class="element-name">Barium</div></td><td class="table-element"><div class="element-abbr">La</div><div class="element-name">Lanthanum</div></td><td class="table-element"><div class="element-abbr">Hf</div><div class="element-name">Hafnium</div></td>
+            <td class="table-element"><div class="element-abbr">Ta</div><div class="element-name">Tantalum</div></td><td class="table-element"><div class="element-abbr">W</div><div class="element-name">Tungsten</div></td><td class="table-element"><div class="element-abbr">Re</div><div class="element-name">Rhenium</div></td><td class="table-element"><div class="element-abbr">Os</div><div class="element-name">Osmium</div></td>
+            <td class="table-element"><div class="element-abbr">Ir</div><div class="element-name">Iridium</div></td><td class="table-element"><div class="element-abbr">Pt</div><div class="element-name">Platinum</div></td><td class="table-element"><div class="element-abbr">Au</div><div class="element-name">Gold</div></td><td class="table-element"><div class="element-abbr">Hg</div><div class="element-name">Mercury</div></td>
+            <td class="table-element"><div class="element-abbr">Ti</div><div class="element-name">Thallium</div></td><td class="table-element"><div class="element-abbr">Pb</div><div class="element-name">Lead</div></td><td class="table-element"><div class="element-abbr">Bi</div><div class="element-name">Bismuth</div></td><td class="table-element"><div class="element-abbr">Po</div><div class="element-name">Polonium</div></td>
+            <td class="table-element"><div class="element-abbr">At</div><div class="element-name">Astatine</div></td><td class="table-element"><div class="element-abbr">Rn</div><div class="element-name">Radon</div></td></tr>
+            <tr class="table-row"><td class="table-element"><div class="element-abbr">Fr</div><div class="element-name">Francium</div></td><td class="table-element"><div class="element-abbr">Ra</div><div class="element-name">Radium</div></td><td class="table-element"><div class="element-abbr">Ac</div><div class="element-name">Actinium</div></td><td class="table-element"><div class="element-abbr">Rf</div><div class="element-name">Rutherfordium</div></td>
+            <td class="table-element"><div class="element-abbr">Db</div><div class="element-name">Dubnium</div></td><td class="table-element"><div class="element-abbr">Sg</div><div class="element-name">Seaborgium</div></td><td class="table-element"><div class="element-abbr">Bh</div><div class="element-name">Bohrium</div></td><td class="table-element"><div class="element-abbr">Hs</div><div class="element-name">Hassium</div></td>
+            <td class="table-element"><div class="element-abbr">Mt</div><div class="element-name">Meitnerium</div></td><td class="table-element"><div class="element-abbr">Ds</div><div class="element-name">Darmstadtium</div></td><td class="table-element"><div class="element-abbr">Rg</div><div class="element-name">Roentgenium</div></td><td class="table-element"><div class="element-abbr">Cn</div><div class="element-name">Coppernicium</div></td>
+            <td class="table-element"><div class="element-abbr">Nh</div><div class="element-name">Nihonium</div></td><td class="table-element"><div class="element-abbr">Fl</div><div class="element-name">Flerovium</div></td><td class="table-element"><div class="element-abbr">Mc</div><div class="element-name">Moscovium</div></td><td class="table-element"><div class="element-abbr">Lv</div><div class="element-name">Livermorium</div></td>
+            <td class="table-element"><div class="element-abbr">Ts</div><div class="element-name">Tennessine</div></td><td class="table-element"><div class="element-abbr">Og</div><div class="element-name">Oganesson</div></td></tr>
+            <tr class="table-row"><td class="table-element-empty" colspan="18"></td></tr>
+            <tr class="table-row"><td class="table-element-empty" colspan="3"></td><td class="table-element"><div class="element-abbr">Ce</div><div class="element-name">Cerium</div></td><td class="table-element"><div class="element-abbr">Pr</div><div class="element-name">Praseodymium</div></td><td class="table-element"><div class="element-abbr">Nd</div><div class="element-name">Neodymium</div></td><td class="table-element"><div class="element-abbr">Pm</div><div class="element-name">Promethium</div></td>
+            <td class="table-element"><div class="element-abbr">Sm</div><div class="element-name">Samarium</div></td><td class="table-element"><div class="element-abbr">Eu</div><div class="element-name">Europium</div></td><td class="table-element"><div class="element-abbr">Gd</div><div class="element-name">Gadolinium</div></td><td class="table-element"><div class="element-abbr">Tb</div><div class="element-name">Terbium</div></td>
+            <td class="table-element"><div class="element-abbr">Dy</div><div class="element-name">Dysprosium</div></td><td class="table-element"><div class="element-abbr">Ho</div><div class="element-name">Holmium</div></td><td class="table-element"><div class="element-abbr">Er</div><div class="element-name">Erbium</div></td><td class="table-element"><div class="element-abbr">Tm</div><div class="element-name">Thulium</div></td>
+            <td class="table-element"><div class="element-abbr">Yb</div><div class="element-name">Ytterbium</div></td><td class="table-element"><div class="element-abbr">Lu</div><div class="element-name">Lutetium</div></td><td class="table-element-empty" colspan="2"></td></tr>
+
+            <tr class="table-row"><td class="table-element-empty" colspan="3"></td><td class="table-element"><div class="element-abbr">Th</div><div class="element-name">Thorium</div></td><td class="table-element"><div class="element-abbr">Pa</div><div class="element-name">Protactinium</div></td><td class="table-element"><div class="element-abbr">U</div><div class="element-name">Uranium</div></td><td class="table-element"><div class="element-abbr">Np</div><div class="element-name">Neptunium</div></td>
+            <td class="table-element"><div class="element-abbr">Pu</div><div class="element-name">Plutonium</div></td><td class="table-element"><div class="element-abbr">Am</div><div class="element-name">Americium</div></td><td class="table-element"><div class="element-abbr">Cu</div><div class="element-name">Curium</div></td><td class="table-element"><div class="element-abbr">Bk</div><div class="element-name">Berkelium</div></td>
+            <td class="table-element"><div class="element-abbr">Cf</div><div class="element-name">Californium</div></td><td class="table-element"><div class="element-abbr">Es</div><div class="element-name">Einstenium</div></td><td class="table-element"><div class="element-abbr">Fm</div><div class="element-name">Fermium</div></td><td class="table-element"><div class="element-abbr">Md</div><div class="element-name">Mendelevium</div></td>
+            <td class="table-element"><div class="element-abbr">No</div><div class="element-name">Nobelium</div></td><td class="table-element"><div class="element-abbr">Lr</div><div class="element-name">Lawrencium</div></td><td class="table-element-empty" colspan="2"></td></tr>
+        </table>
+        <input type="hidden" id="element">
+    </form>
+</div>
+
+<!--Overlay window-->
+<div id="overlay-window" onclick="overlay_window_off('overlay-window')">
+    <div class="overlay-table">
+        <div id="overlay-title">Title</div>
+        <div class="overlay-table">
+            <table class="overlay-list">
+                <tr class="overlay-list-row">
+                    <td class="overlay-list-cell">
+
+
+                        {% for isotope in isotopes %}
+                            <div class="isotope-row">
+                                <div class="isotope-name">{{ isotope.name }}</div>
+                            </div>
+                        {% endfor %}
+
+                        <p id="test"></p>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'lobster/js/radData.js' %}"></script>
+{% endblock %}

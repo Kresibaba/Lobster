@@ -1,0 +1,39 @@
+{% extends 'lobster/header.html' %}
+
+{% block head %}
+    <title>{{ projects.name }}</title>
+{% endblock %}
+
+{% load static %}
+
+{% block stylesheets %}
+    <link href="{% static 'lobster/css/parameters_nonrad.css' %}" rel="stylesheet" type = "text/css"/>
+{% endblock%}
+
+{% block body %}
+    <body>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="project_table">
+                <div class="chapter-header">
+                    Waste properties
+                </div>
+                <div class="project_cell">
+                    <div class="chapter-label">Waste type</div>
+                    {{ form.waste_type }}
+                </div>
+                <div class="project_cell">
+                    <div class="chapter-label">Weight</div>
+                    {{ form.weight_net }} kg
+                </div>
+                <div class="project_cell">
+                    <div class="chapter-label">Volume</div>
+                    {{ form.volume_net }} m<sup>3</sup>
+                </div>
+                <div class="project_cell" style="text-align: center; margin-top: 10px">
+                    <input type="submit" name="parameters_nonrad" id="parameters_nonrad" value="NEXT">
+                </div>
+            </div>
+        </form>
+    </body>
+{% endblock %}

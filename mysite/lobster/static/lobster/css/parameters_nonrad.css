@@ -1,0 +1,90 @@
+.page-header {
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    text-align: center;
+    font: 24px Helvetica sans-serif;
+    color: rgba(245, 245, 245, 0.9);
+    width: 100%;
+    min-width: 980px;
+}
+
+.project_table {
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    text-align: left;
+    padding-bottom: 15px;
+    width: 50%;
+    min-width: 500px;
+    left: 25%;
+    border: 2px solid rgba(245, 245, 245, 0.9);
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.9);
+    -webkit-box-shadow: 7px 7px 7px rgba(128, 128, 128, 0.5);
+    -moz-box-shadow: 7px 7px 7px rgba(128, 128, 128, 0.5);
+    box-shadow: 7px 7px 7px rgba(128, 128, 128, 0.5);
+}
+
+.project_cell {
+    display: block;
+    padding: 7px;
+    font: 18px Helvetica sans-serif;
+    background-color: rgba(245, 245, 245, 0.7);
+    border-radius: 10px;
+}
+
+.chapter-header {
+    display: block;
+    text-align: center;
+    font: 24px Helvetica sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid darkgray;
+}
+
+.chapter-label {
+    display: block;
+    text-align: left;
+    font: 18px Helvetica sans-serif;
+    color: black;
+    margin-bottom: 5px;
+}
+#id_weight_net, #id_volume_net, #id_waste_type {
+    display: inline-block;
+    text-align: right;
+    font: 16px Helvetica sans-serif;
+    width: 60%;
+    border: 1px solid lightgray;
+    background-color: white;
+    padding: 5px;
+}
+
+input[type = number]::-webkit-inner-spin-button,
+input[type = number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0px;
+}
+
+#id_waste_type {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-progress-appearance: unset;
+    background: url("../img/down_arrow.png") no-repeat right center !important;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-color: white !important;
+    border-radius: 0px;
+}
+
+input[type = submit] {
+    border: none;
+    background-color: limegreen;
+    color: white;
+    font: 18px Helvetica sans-serif;
+}
+
+

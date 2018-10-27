@@ -1,0 +1,52 @@
+html {
+    background: lightgray no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.dropdown-menu {
+    left: 96%;
+    top: 10%;
+    position: relative;
+    display: inline-block;
+    width: 5%;
+}
+
+.dropdown-btn {
+    width: 3.5%;
+    height: 3.5%;
+    min-width: 40px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -100%;
+    background-color: whitesmoke;
+    border-radius: 5% 15%;
+    min-width: 100px;
+    overflow: auto;
+    font: 16px Helvetica sans-serif;
+    z-index: 1;
+}
+
+.dropdown-content a, p {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: darkgray
+}
+
+.show {
+    display: block;
+}
+
+
